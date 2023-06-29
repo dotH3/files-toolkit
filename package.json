@@ -1,8 +1,8 @@
 {
-  "name": "mediamanager",
+  "name": "files-toolkit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test":"ts-node test/index.ts",
     "dev": "ts-node src/index.ts",
