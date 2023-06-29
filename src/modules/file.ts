@@ -1,7 +1,6 @@
 import fs from 'fs';
 import { basename, dirname, extname } from 'path';
 import sharp from 'sharp';
-import { ResizeImgBuffer } from '../main';
 
 
 export const _exist = (path: string) => {
@@ -39,7 +38,14 @@ export const _type = (path: string): 'file' | 'directory' => {
 }
 
 
-export const _resizeImgBuffer = async({buffer,options}:ResizeImgBuffer):Promise<Buffer>=>{
+export const _resizeImgBuffer = async({buffer,options}:{
+    buffer: string | Buffer;
+    options: {
+      width: number;
+      height: number;
+      fit?: 'contain' | 'cover' | 'fill' | 'inside' | 'outside';
+    };
+  }):Promise<Buffer>=>{
     // const img = await sharp(buffer).resize(options).toBuffer();
     const img = sharp(buffer).resize(options).toBuffer();
     return img

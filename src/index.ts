@@ -1,6 +1,5 @@
 
 //   console.log((Buffer.byteLength(buffer) / (1024 * 1024)).toFixed(2)+' MB');
-import { ResizeImgBuffer } from "./main";
 import { _create, _exist, _read, _readJSON, _resizeImgBuffer, _type } from "./modules/file";
 
 export class FilesToolKit {
