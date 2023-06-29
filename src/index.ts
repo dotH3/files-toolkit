@@ -1,19 +1,28 @@
-import fs from 'fs'
-import sharp from 'sharp'
 
-const edit = async()=>{
-  const buffer = fs.readFileSync('./src/input/img.jpeg')
-  console.log((Buffer.byteLength(buffer) / (1024 * 1024)).toFixed(2)+' MB');
+//   console.log((Buffer.byteLength(buffer) / (1024 * 1024)).toFixed(2)+' MB');
+
+
+import { ResizeImgBuffer } from "./main";
+import { _create, _exist, _read, _readJSON, _resizeImgBuffer, _type } from "./modules/file";
+
+export class FileManager {
+  exist: (path:string)=>boolean;
+  create: (path:string, data:string)=>void;
+  read: (path:string, raw?:boolean)=>string|Buffer;
+  readJSON: (path:string)=>object|JSON;
+  type: (path:string)=>'file'|'directory';
+  resizeImgBuffer: ({ buffer, options }: ResizeImgBuffer) => Promise<Buffer>;
   
-  const img = await sharp(buffer).resize({width:800,height:600,fit:'contain'}).toBuffer();
-  console.log((Buffer.byteLength(img) / (1024 * 1024)).toFixed(2)+' MB');
-
-  await fs.writeFile('./src/output/img.jpg',img,(err)=>{
-    if(err)return console.log(err)
-  })
-
-  return console.log('Done!');
-  
+  constructor(){
+      this.exist = _exist;
+      this.create = _create;
+      this.read = _read;
+      this.readJSON = _readJSON;
+      this.type = _type;
+      this.resizeImgBuffer = _resizeImgBuffer;
+  }
 }
 
-edit();
+export const fun = (msg:string):string=>{
+  return msg
+}

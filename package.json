@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --ignore *.json --exec ts-node src/index.ts --verboseOLD",
-    "dist": "nodemon dist/index.js",
-    "build": "npx tsc"
+    "test":"ts-node test/index.ts",
+    "dev": "ts-node src/index.ts",
+    "build": "rm -rf build && npx tsc"
   },
   "keywords": [],
   "author": "",
