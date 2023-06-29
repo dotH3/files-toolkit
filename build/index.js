@@ -1,10 +1,9 @@
 "use strict";
-//   console.log((Buffer.byteLength(buffer) / (1024 * 1024)).toFixed(2)+' MB');
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fun = exports.FileManager = void 0;
+exports.fun = exports.FilesToolKit = void 0;
 var file_1 = require("./modules/file");
-var FileManager = /** @class */ (function () {
-    function FileManager() {
+var FilesToolKit = /** @class */ (function () {
+    function FilesToolKit() {
         this.exist = file_1._exist;
         this.create = file_1._create;
         this.read = file_1._read;
@@ -12,9 +11,9 @@ var FileManager = /** @class */ (function () {
         this.type = file_1._type;
         this.resizeImgBuffer = file_1._resizeImgBuffer;
     }
-    return FileManager;
+    return FilesToolKit;
 }());
-exports.FileManager = FileManager;
+exports.FilesToolKit = FilesToolKit;
 var fun = function (msg) {
     return msg;
 };
