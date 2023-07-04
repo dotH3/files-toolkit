@@ -8,7 +8,7 @@ export const _exist = (path: string) => {
     return false;
 }
 
-export const _create = (path: string, data: string) => {
+export const _create = (path: string, data: string|Buffer) => {
     if (_type(path) != 'file') throw new Error(`path:"${path}" is not a file path`);
     // if (isFileOrDirectory(path) != 'file') throw new Error(`path:"${path}" is not a file path`)
     fs.mkdirSync(dirname(path), { recursive: true });

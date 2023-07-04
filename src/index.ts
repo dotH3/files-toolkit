@@ -4,7 +4,7 @@ import { _create, _exist, _read, _readJSON, _resizeImgBuffer, _type } from "./mo
 
 export class FilesToolKit {
   exist: (path:string)=>boolean;
-  create: (path:string, data:string)=>void;
+  create: (path:string, data:string|Buffer)=>void;
   read: (path:string, raw?:boolean)=>string|Buffer;
   readJSON: (path:string)=>object|JSON;
   type: (path:string)=>'file'|'directory';
@@ -25,8 +25,4 @@ export class FilesToolKit {
       this.type = _type;
       this.resizeImgBuffer = _resizeImgBuffer;
   }
-}
-
-export const fun = (msg:string):string=>{
-  return msg
 }

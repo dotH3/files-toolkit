@@ -1,7 +1,7 @@
 /// <reference types="node" />
 export declare class FilesToolKit {
     exist: (path: string) => boolean;
-    create: (path: string, data: string) => void;
+    create: (path: string, data: string | Buffer) => void;
     read: (path: string, raw?: boolean) => string | Buffer;
     readJSON: (path: string) => object | JSON;
     type: (path: string) => 'file' | 'directory';
@@ -15,4 +15,3 @@ export declare class FilesToolKit {
     }) => Promise<Buffer>;
     constructor();
 }
-export declare const fun: (msg: string) => string;

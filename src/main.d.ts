@@ -1,7 +1,7 @@
 declare module "files-toolkit" {
     export class FilesToolKit {
       exist: (path: string) => boolean;
-      create: (path: string, data: string) => void;
+      create: (path: string, data: string|Buffer) => void;
       read: (path: string, raw?: boolean) => string | Buffer;
       readJSON: (path: string) => object | JSON;
       type: (path: string) => 'file' | 'directory';

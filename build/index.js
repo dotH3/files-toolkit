@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fun = exports.FilesToolKit = void 0;
+exports.FilesToolKit = void 0;
 //   console.log((Buffer.byteLength(buffer) / (1024 * 1024)).toFixed(2)+' MB');
 var file_1 = require("./modules/file");
 var FilesToolKit = /** @class */ (function () {
@@ -15,7 +15,3 @@ var FilesToolKit = /** @class */ (function () {
     return FilesToolKit;
 }());
 exports.FilesToolKit = FilesToolKit;
-var fun = function (msg) {
-    return msg;
-};
-exports.fun = fun;
